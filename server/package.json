@@ -12,9 +12,15 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@google/generative-ai": "^0.24.1",
+		"@types/jsonwebtoken": "^9.0.10",
+		"axios": "^1.13.6",
+		"bcryptjs": "^3.0.3",
 		"cors": "^2.8.5",
 		"dotenv": "^16.3.1",
 		"express": "^4.21.2",
+		"jsonwebtoken": "^9.0.3",
+		"mongoose": "^9.3.3",
 		"socket.io": "^4.7.3"
 	},
 	"devDependencies": {

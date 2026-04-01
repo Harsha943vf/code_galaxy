@@ -8,6 +8,7 @@
     .view-title {
         @apply mb-2 w-full border-b pb-2 text-start text-lg;
     }
+    
 }
 
 body {
@@ -15,10 +16,12 @@ body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    background-color: rgb(34, 148, 159);
 
     --sb-track-color: #3d404a;
     --sb-thumb-color: #e1e1ffb3;
     --sb-size: 6px;
+    
 }
 
 ::-webkit-scrollbar {

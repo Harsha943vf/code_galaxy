@@ -1,6 +1,8 @@
 interface Language {
     language: string
-    version: string
+    // OneCompiler doesn't strictly require versions for most languages, 
+    // so we make it optional to maintain compatibility with your previous code.
+    version?: string 
     aliases: string[]
 }
 
@@ -14,4 +16,4 @@ interface RunContext {
     runCode: () => void
 }
 
-export { Language, RunContext }
+export { type Language, type RunContext }

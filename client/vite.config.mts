@@ -29,10 +29,21 @@ export default defineConfig({
             },
         ],
     },
-    preview: {
-        port: 5173
+    server: {
+        port: 5174,
+        open: false,
+        proxy: {
+            "/api": {
+                target: "http://localhost:3000",
+                changeOrigin: true,
+            },
+            "/socket.io": {
+                target: "http://localhost:3000",
+                ws: true,
+            },
+        },
     },
-    server:{
-        open: true,
-    }
+    preview: {
+        port: 5173,
+    },
 })

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { IoArrowBack, IoCodeSlash, IoMail, IoLocation, IoCall, IoGlobe } from "react-icons/io5"
+import { IoArrowBack, IoCodeSlash, IoMail, IoLocation, IoGlobe } from "react-icons/io5"
 import { LuGithub, LuTwitter, LuLinkedin, LuMessageSquare } from "react-icons/lu"
 import { toast } from "react-hot-toast"
 
@@ -282,7 +282,7 @@ const ContactPage = () => {
             <footer className="border-t border-darkHover bg-darkSecondary px-6 py-8">
                 <div className="mx-auto max-w-7xl text-center">
                     <p className="text-gray-400">
-                        &copy; 2024 Code-Galaxy. Empowering collaborative development worldwide.
+                        &copy; 2026 Code-Galaxy. Empowering collaborative development worldwide.
                     </p>
                     <div className="mt-4 flex justify-center gap-6">
                         <Link to="/" className="text-primary hover:text-primary/80 transition-colors">
