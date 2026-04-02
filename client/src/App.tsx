@@ -8,6 +8,8 @@ import ContactPage from "./pages/ContactPage"
 import AboutPage from "./pages/AboutPage"
 import { LoginPage } from "./pages/LoginPage"
 import { RegisterPage } from "./pages/RegisterPage"
+import StudyPlannerPage from "./pages/StudyPlannerPage"
+import StudyPlanDetailsPage from "./pages/StudyPlanDetailsPage"
 import { AuthProvider } from "./context/AuthContext"
 import { Navbar } from "./components/Navbar"
 
@@ -27,6 +29,8 @@ const App = () => {
                             <Route path="/register" element={<RegisterPage />} />
                             <Route path="/editor" element={<EditorPage />} />
                             <Route path="/editor/:roomId" element={<EditorPage />} />
+                            <Route path="/study-planner" element={<StudyPlannerPage />} />
+                            <Route path="/study-plan/:planId" element={<StudyPlanDetailsPage />} />
                         </Routes>
                     </div>
                 </Router>

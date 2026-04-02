@@ -10,6 +10,7 @@ import path from "path"
 import { GoogleGenerativeAI } from "@google/generative-ai" // Import Gemini SDK
 import { connectDB } from "./config/database"
 import authRoutes from "./routes/auth"
+import studyPlanRoutes from "./routes/studyPlan"
 
 dotenv.config()
 
@@ -24,6 +25,9 @@ connectDB()
 
 // Auth routes
 app.use("/api/auth", authRoutes)
+
+// Study Plan routes
+app.use("/api/study-plans", studyPlanRoutes)
 
 const server = http.createServer(app)
 
