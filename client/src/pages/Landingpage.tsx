@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom"
 import { v4 as uuidv4 } from "uuid"
-import { toast } from "react-hot-toast"
 
 function Landingpage() {
   const navigate = useNavigate()
@@ -11,7 +10,7 @@ function Landingpage() {
   }
 
   const handleAIPlanner = () => {
-    toast.success("AI Study Planner coming soon!")
+    navigate("/study-planner")
   }
 
   return (

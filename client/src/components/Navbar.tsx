@@ -34,7 +34,10 @@ export const Navbar = () => {
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
           {user && (
-            <Link to="/" className="text-gray-300 hover:text-white transition-colors">Collaborative Editor</Link>
+            <>
+              <Link to="/homepage" className="text-gray-300 hover:text-white transition-colors">Collaborative Editor</Link>
+              <Link to="/study-planner" className="text-gray-300 hover:text-white transition-colors">Study Planner</Link>
+            </>
           )}
           <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
           <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
