@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
+// Use separate API key for Study Planner to avoid rate limiting
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY_STUDY || process.env.GEMINI_API_KEY || "")
 
 // Mock study plan for development/testing when API key is invalid
 const getMockStudyPlan = (request: StudyPlanRequest): GeneratedStudyPlan => {

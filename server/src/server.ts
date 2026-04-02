@@ -39,8 +39,9 @@ const io = new Server(server, {
     pingTimeout: 60000,
 })
 
-// Initialize Gemini
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string)
+// Initialize Gemini AI - Separate keys for different purposes
+// Chat/Code Generation uses GEMINI_API_KEY_CHAT
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY_CHAT || process.env.GEMINI_API_KEY as string)
 
 let userSocketMap: User[] = []
 
