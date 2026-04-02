@@ -353,11 +353,13 @@ export const ProfilePage = () => {
 ### Server (.env)
 ```
 PORT=3000
-MONGO_URI=mongodb+srv://harsha7984:Harsha0809@cluster0.ozmzn6j.mongodb.net/?appName=Cluster0
-JWT_SECRET=cgc_jwt_secret_key_2024_harsha
-GEMINI_API_KEY=AIzaSyDWzYkO708NM9avz6sMAR_JImcHD6rXV_U
-ONECOMPILER_API_KEY=oc_44fhk88bh_44fhk88bz_5a025f74ac6d62705f8a94933e4c699952142e1ae2bf1a69
+MONGO_URI=your_mongodb_uri_here
+JWT_SECRET=your_jwt_secret_here
+GEMINI_API_KEY=your_gemini_key_here
+ONECOMPILER_API_KEY=your_onecompiler_key_here
 ```
+
+**See `.env.example` for template**
 
 ### Client (Optional - already uses localhost:3000)
 ```

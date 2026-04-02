@@ -197,14 +197,16 @@ client/
 
 ## 📦 Environment Variables
 
-Your `.env` file already has:
+Your `.env` file should have (see `.env.example`):
 ```
 PORT=3000
-ONECOMPILER_API_KEY=oc_44fhk88bh...
-GEMINI_API_KEY=AIzaSyD...
-MONGO_URI=mongodb+srv://harsha7984:...
-JWT_SECRET=cgc_jwt_secret_key_2024_harsha
+ONECOMPILER_API_KEY=your_key_here
+GEMINI_API_KEY=your_key_here
+MONGO_URI=your_mongodb_uri_here
+JWT_SECRET=your_jwt_secret_here
 ```
+
+**Important:** Never commit `.env` with real credentials!
 
 ---
 

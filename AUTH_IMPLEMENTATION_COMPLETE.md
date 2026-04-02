@@ -43,14 +43,16 @@
 
 ## 🔑 Environment Variables
 
-Your `.env` file now has:
+Your `.env` file should have (see `.env.example`):
 ```properties
 PORT=3000
-ONECOMPILER_API_KEY=oc_44fhk88bh_44fhk88bz_5a025f74ac6d62705f8a94933e4c699952142e1ae2bf1a69
-GEMINI_API_KEY=AIzaSyDWzYkO708NM9avz6sMAR_JImcHD6rXV_U
-MONGO_URI=mongodb+srv://harsha7984:Harsha0809@cluster0.ozmzn6j.mongodb.net/?appName=Cluster0
-JWT_SECRET=cgc_jwt_secret_key_2024_harsha
+ONECOMPILER_API_KEY=your_key_here
+GEMINI_API_KEY=your_key_here
+MONGO_URI=your_mongodb_uri_here
+JWT_SECRET=your_jwt_secret_here
 ```
+
+**Important:** Keep your `.env` file secure - never commit it to GitHub!
 
 ---
 
