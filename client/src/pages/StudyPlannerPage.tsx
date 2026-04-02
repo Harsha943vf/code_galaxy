@@ -51,7 +51,13 @@ const StudyPlannerPage = () => {
 
     const fetchMyPlans = async () => {
         try {
-            const token = localStorage.getItem('token')
+            const token = localStorage.getItem('cgc_auth_token')
+            
+            if (!token) {
+                setPlans([])
+                return
+            }
+
             const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/study-plans`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -61,6 +67,9 @@ const StudyPlannerPage = () => {
             if (response.ok) {
                 const data = await response.json()
                 setPlans(data.plans || [])
+            } else if (response.status === 401) {
+                toast.error('Session expired. Please login again')
+                navigate('/login')
             }
         } catch (error) {
             console.error('Error fetching plans:', error)
@@ -73,7 +82,15 @@ const StudyPlannerPage = () => {
         setIsLoading(true)
 
         try {
-            const token = localStorage.getItem('token')
+            const token = localStorage.getItem('cgc_auth_token')
+            
+            if (!token) {
+                toast.error('Please login first')
+                navigate('/login')
+                setIsLoading(false)
+                return
+            }
+
             const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/study-plans/generate`, {
                 method: 'POST',
                 headers: {
@@ -82,6 +99,12 @@ const StudyPlannerPage = () => {
                 },
                 body: JSON.stringify(formData),
             })
+
+            if (response.status === 401) {
+                toast.error('Session expired. Please login again')
+                navigate('/login')
+                return
+            }
 
             if (response.ok) {
                 const data = await response.json()

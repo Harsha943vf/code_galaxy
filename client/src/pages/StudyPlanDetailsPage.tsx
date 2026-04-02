@@ -39,7 +39,7 @@ const StudyPlanDetailsPage = () => {
 
     const fetchPlan = async () => {
         try {
-            const token = localStorage.getItem("token")
+            const token = localStorage.getItem("cgc_auth_token")
             const response = await fetch(
                 `${import.meta.env.VITE_API_URL || "http://localhost:3000"}/api/study-plans/${planId}`,
                 {
@@ -76,7 +76,7 @@ const StudyPlanDetailsPage = () => {
         if (!plan) return
 
         try {
-            const token = localStorage.getItem("token")
+            const token = localStorage.getItem("cgc_auth_token")
             const response = await fetch(
                 `${import.meta.env.VITE_API_URL || "http://localhost:3000"}/api/study-plans/${planId}/topic/${topicId}/complete`,
                 {
@@ -102,7 +102,7 @@ const StudyPlanDetailsPage = () => {
         if (!plan || !selectedTopic) return
 
         try {
-            const token = localStorage.getItem("token")
+            const token = localStorage.getItem("cgc_auth_token")
             const response = await fetch(
                 `${import.meta.env.VITE_API_URL || "http://localhost:3000"}/api/study-plans/${planId}/topic/${selectedTopic._id}/notes`,
                 {
