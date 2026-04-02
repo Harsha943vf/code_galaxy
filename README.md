@@ -104,10 +104,30 @@ npm run preview  # Preview production build
 
 ## 📚 Documentation
 
-- [Complete Setup Guide](./COMPLETE_SETUP_GUIDE.md)
-- [Authentication Implementation](./AUTH_IMPLEMENTATION_COMPLETE.md)
-- [Windows Compatibility](./WINDOWS_READY.md)
-- [Bug Fixes](./BUG_FIX_ROOM_ID.md)
+- [Complete Setup Guide](./SETUP_FOR_GITHUB.md)
+- [Gemini API Setup Guide](./GEMINI_API_SETUP.md) ⭐ **Start here if you want AI features**
+- [Troubleshooting AI Issues](./GEMINI_API_SETUP.md#-troubleshooting)
+
+## 🤖 AI Features (Study Planner)
+
+CodeGalaxy includes an **AI-powered Study Planner** that uses Google Gemini API:
+
+- ✅ **Works with fallback data** - App functions even without a valid API key
+- 🚀 **AI-powered mode** - Connect your own Gemini API key for personalized AI generation
+- 📖 **Study Plans** - AI generates customized study plans
+- 📝 **Quizzes** - Auto-generated quizzes for topics
+- 💡 **Explanations** - AI explains complex concepts
+- 📚 **Resources** - Curated learning resources
+
+**⚠️ Current Status**: Study Planner is fully functional with fallback mock data. To enable real AI features, [set up your Gemini API key](./GEMINI_API_SETUP.md).
+
+### Quick API Setup
+See [GEMINI_API_SETUP.md](./GEMINI_API_SETUP.md) for step-by-step instructions to:
+1. Get a free Gemini API key
+2. Add it to your `.env` file
+3. Start using AI-powered features
+
+---
 
 ## 🔐 Security
 

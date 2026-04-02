@@ -16,15 +16,21 @@ router.use(verifyToken)
 // Generate a new study plan
 router.post("/generate", async (req: Request, res: Response) => {
     try {
+        console.log("POST /generate called")
         const { subject, goal, level, totalHours, duration } = req.body
         const userId = (req as any).userId
 
+        console.log("Request body:", { subject, goal, level, totalHours, duration })
+        console.log("User ID:", userId)
+
         // Validate input
         if (!subject || !goal || !totalHours || !duration) {
+            console.warn("Missing required fields:", { subject, goal, totalHours, duration })
             return res.status(400).json({ error: "Missing required fields" })
         }
 
         // Generate plan using AI
+        console.log("Generating study plan...")
         const generatedPlan = await generateStudyPlan({
             subject,
             goal,
@@ -32,6 +38,8 @@ router.post("/generate", async (req: Request, res: Response) => {
             totalHours,
             duration,
         })
+
+        console.log("Study plan generated successfully with", generatedPlan.topics?.length, "topics")
 
         // Create study plan in database
         const studyPlan = new StudyPlan({
@@ -47,6 +55,7 @@ router.post("/generate", async (req: Request, res: Response) => {
         })
 
         await studyPlan.save()
+        console.log("Study plan saved to database with ID:", studyPlan._id)
 
         res.status(201).json({
             success: true,
@@ -55,6 +64,8 @@ router.post("/generate", async (req: Request, res: Response) => {
     } catch (error) {
         console.error("Error generating study plan:", error)
         const errorMessage = (error as any)?.message || "Failed to generate study plan"
+        const stack = (error as any)?.stack
+        console.error("Error stack:", stack)
         res.status(500).json({
             error: "Failed to generate study plan",
             details: errorMessage,

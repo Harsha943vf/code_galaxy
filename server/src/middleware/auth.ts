@@ -7,9 +7,11 @@ export interface AuthRequest extends Request {
 
 export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
-        const token = req.headers.authorization?.split(" ")[1] || req.cookies?.token
+        const authHeader = req.headers.authorization
+        const token = authHeader?.split(" ")[1] || req.cookies?.token
 
         if (!token) {
+            console.warn("No token provided in request to", req.path)
             return res.status(401).json({ message: "No token provided" })
         }
 
@@ -17,6 +19,7 @@ export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction)
         req.userId = decoded.userId
         next()
     } catch (error: any) {
+        console.error("Token verification failed:", error.message)
         res.status(401).json({ message: "Invalid or expired token", error: error.message })
     }
 }
