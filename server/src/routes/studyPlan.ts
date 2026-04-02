@@ -54,9 +54,10 @@ router.post("/generate", async (req: Request, res: Response) => {
         })
     } catch (error) {
         console.error("Error generating study plan:", error)
+        const errorMessage = (error as any)?.message || "Failed to generate study plan"
         res.status(500).json({
             error: "Failed to generate study plan",
-            details: (error as any).message,
+            details: errorMessage,
         })
     }
 })

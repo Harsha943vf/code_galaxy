@@ -22,7 +22,7 @@ export interface GeneratedStudyPlan {
 export async function generateStudyPlan(
     request: StudyPlanRequest
 ): Promise<GeneratedStudyPlan> {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" })
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
     const prompt = `Create a comprehensive study plan for:
 Subject: ${request.subject}
@@ -79,7 +79,7 @@ export async function generateQuizzes(
         explanation: string
     }>
 > {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" })
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
     const prompt = `Generate ${count} quiz questions about:
 Topic: ${topic}
@@ -120,7 +120,7 @@ Make sure:
 }
 
 export async function explainTopic(topic: string, question: string): Promise<string> {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" })
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
     const prompt = `You are an expert tutor. Explain this clearly and concisely:
 
@@ -143,7 +143,7 @@ Provide:
 }
 
 export async function generateResourceRecommendations(subject: string): Promise<string[]> {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" })
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
     const prompt = `Recommend 10 best free resources (websites, YouTube channels, books, tools) for learning:
 Subject: ${subject}
